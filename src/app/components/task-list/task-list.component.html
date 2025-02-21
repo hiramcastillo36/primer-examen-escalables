@@ -1,0 +1,17 @@
+<p>Lista de tareas</p>
+<div *ngFor="let task of tasks">
+    <div>
+        <p>
+            <strong>Id:</strong> {{ task.id }}
+        </p>
+        <p>
+            <strong>Titulo:</strong> {{ task.title }}
+        </p>
+        <p>
+            <strong>Completada:</strong> {{ task.completed ? 'Si' : 'No' }}
+        </p>
+
+        <input type="checkbox" [checked]="task.completed" disabled>
+        <span>{{ task.title }}</span>
+    </div>
+</div>
