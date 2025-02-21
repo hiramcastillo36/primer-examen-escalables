@@ -14,4 +14,10 @@
         <input type="checkbox" [checked]="task.completed" disabled>
         <span>{{ task.title }}</span>
     </div>
+
+    <!-- Aquí se muestra el botón de eliminar o marcar -->
+    <div>
+        <button (click)="deleteTask(task.id)">Eliminar</button>
+        <button (click)="markAsCompleted(task.id)">Marcar</button>
+    </div>
 </div>

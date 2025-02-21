@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { Task } from './interfaces/task.interface';
@@ -10,6 +10,7 @@ import { Task } from './interfaces/task.interface';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
   tasks: Task[] = [
     { id: 1, title: 'Task 1', completed: false },
     { id: 2, title: 'Task 2', completed: false },
@@ -17,4 +18,18 @@ export class AppComponent {
     { id: 4, title: 'Task 4', completed: false },
     { id: 5, title: 'Task 5', completed: false },
   ];
+
+  deleteTask(taskId: number): void {
+    this.tasks = this.tasks.filter(task => task.id !== taskId);
+  }
+
+    markAsCompleted(taskId: number): void {
+        this.tasks = this.tasks.map(task => {
+        if (task.id === taskId) {
+            task.completed = true;
+        }
+        return task;
+        });
+    }
+
 }

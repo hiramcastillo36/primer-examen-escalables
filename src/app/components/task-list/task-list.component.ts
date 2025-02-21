@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../../interfaces/task.interface';
 import { NgFor } from '@angular/common';
 
@@ -8,6 +8,7 @@ import { NgFor } from '@angular/common';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
 })
+
 export class TaskListComponent {
     @Input()
     tasks: Task[] = [
@@ -17,4 +18,17 @@ export class TaskListComponent {
             completed: false
         }
     ]
+
+    @Output()
+    deleteTaskEvent = new EventEmitter<number>();
+    @Output()
+    markAsCompletedEvent = new EventEmitter<number>();
+
+    deleteTask(taskId: number): void {
+        this.deleteTaskEvent.emit(taskId);
+    }
+
+    markAsCompleted(taskId: number): void {
+        this.markAsCompletedEvent.emit(taskId);
+    }
 }

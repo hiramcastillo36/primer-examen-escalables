@@ -7,6 +7,8 @@
     <section>
         <app-task-list
             [tasks]="tasks"
+            (deleteTaskEvent)="deleteTask($event)"
+            (markAsCompletedEvent)="markAsCompleted($event)"
         ></app-task-list>
     </section>
 </main>
