@@ -17,7 +17,10 @@ export class AppComponent {
     { id: 3, title: 'Estudiar Angular', completed: false },
     { id: 4, title: 'Hacer la comida', completed: false },
     { id: 5, title: 'Hacer la tarea', completed: false },
-    { id: 6, title: 'Hacer la cama', completed: true }
+    { id: 6, title: 'Hacer la cama', completed: true },
+    { id: 7, title: 'Hacer la compra', completed: true },
+    { id: 8, title: 'Hacer la cena', completed: true },
+    { id: 9, title: 'Ir al gimnasio', completed: false },
   ];
 
   deleteTask(taskId: number): void {
