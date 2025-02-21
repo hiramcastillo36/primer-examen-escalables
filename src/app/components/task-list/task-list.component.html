@@ -1,23 +1,23 @@
-<p>Lista de tareas</p>
-<div *ngFor="let task of tasks" [ngClass]="{ completed: task.completed }">
-    <div>
-        <p>
-            <strong>Id:</strong> {{ task.id }}
-        </p>
-        <p>
-            <strong>Titulo:</strong> {{ task.title }}
-        </p>
-        <p>
-            <strong>Completada:</strong> {{ task.completed ? 'Si' : 'No' }}
-        </p>
-
-        <input type="checkbox" [checked]="task.completed" disabled>
-        <span>{{ task.title }}</span>
-    </div>
-
-    <!-- Aquí se muestra el botón de eliminar o marcar -->
-    <div>
-        <button (click)="deleteTask(task.id)">Eliminar</button>
-        <button (click)="markAsCompleted(task.id)">Marcar</button>
+<div class="task-list">
+    <h1>Lista de tareas</h1>
+    <div *ngFor="let task of tasks" class="task-item" [ngClass]="{ completed: task.completed }">
+        <div class="task-content">
+            <input type="checkbox"
+                   class="task-checkbox"
+                   [checked]="task.completed"
+                   disabled>
+            <div class="task-info">
+                <p class="task-title">{{ task.title }}</p>
+                <small>Completada: {{ task.completed ? 'Sí' : 'No' }}</small>
+            </div>
+        </div>
+        <div class="task-actions">
+            <button class="btn btn-complete" (click)="markAsCompleted(task.id)">
+                Marcar como completada
+            </button>
+            <button class="btn btn-delete" (click)="deleteTask(task.id)">
+                Eliminar
+            </button>
+        </div>
     </div>
 </div>
