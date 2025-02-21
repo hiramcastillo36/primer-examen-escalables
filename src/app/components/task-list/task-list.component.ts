@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../../interfaces/task.interface';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-task-list',
-  imports: [NgFor],
+  imports: [NgFor, NgClass],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
 })

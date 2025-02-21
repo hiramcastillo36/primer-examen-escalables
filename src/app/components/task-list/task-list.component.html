@@ -1,5 +1,5 @@
 <p>Lista de tareas</p>
-<div *ngFor="let task of tasks">
+<div *ngFor="let task of tasks" [ngClass]="{ completed: task.completed }">
     <div>
         <p>
             <strong>Id:</strong> {{ task.id }}
