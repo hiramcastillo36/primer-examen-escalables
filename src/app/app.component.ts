@@ -12,11 +12,12 @@ import { Task } from './interfaces/task.interface';
 export class AppComponent {
 
   tasks: Task[] = [
-    { id: 1, title: 'Task 1', completed: false },
-    { id: 2, title: 'Task 2', completed: false },
-    { id: 3, title: 'Task 3', completed: false },
-    { id: 4, title: 'Task 4', completed: false },
-    { id: 5, title: 'Task 5', completed: false },
+    { id: 1, title: 'Ir al supermercado', completed: false },
+    { id: 2, title: 'Sacar al perro', completed: false },
+    { id: 3, title: 'Estudiar Angular', completed: false },
+    { id: 4, title: 'Hacer la comida', completed: false },
+    { id: 5, title: 'Hacer la tarea', completed: false },
+    { id: 6, title: 'Hacer la cama', completed: true }
   ];
 
   deleteTask(taskId: number): void {
